@@ -1,7 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable array-callback-return */
-
 import React from 'react';
 import Book from '../Book';
 import AddBook from '../AddNewBook';
@@ -40,10 +36,11 @@ class Books extends React.Component {
   }
 
   render() {
+    const { booksList } = this.state;
     return (
       <div className="container">
         <div className="booksContainer">
-          {this.state.booksList.map((book) => (
+          {booksList.map((book) => (
             <Book
               key={book.id}
               title={book.title}
