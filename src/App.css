@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+/* stylelint-disable declaration-colon-newline-after */
+/* stylelint-disable value-list-comma-newline-after */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Navbar {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(172, 169, 169);
+  background-color: aqua;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navigation-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  list-style: none;
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+  margin-right: 70px;
+  border-radius: 50%;
+  background-color: tomato;
+}
+
+.container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.booksContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.book {
+  width: 90%;
+  height: 200px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: bisque;
+}
+
+.comments-remove-edit {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.remove {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.progress {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 39%;
+}
+
+.progress-bar {
+  width: 150px;
+  height: 150px;
+}
+
+.progress-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  width: 90%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkStyle {
+  text-decoration: none;
+  color: black;
 }
