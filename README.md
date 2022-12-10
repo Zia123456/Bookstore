@@ -65,11 +65,10 @@ I used the following tech stacks
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add  Book]**
+- **[Add Book]**
 - **[Eddit The Added Book]**
 - **[Remove Book]**
 - **[See Progress]**
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,7 +180,6 @@ Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **[Check Book Categories]**
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
