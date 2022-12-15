@@ -1,21 +1,28 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { removeBookAction } from '../redux/books/books';
 
-function Book({ title, author, genre, progress }) {
+function Book(props) {
+  const dispatch = useDispatch();
+  const { book } = props;
+
   return (
     <div className="book">
       <div>
-        <span>{genre}</span>
-        <h2>{title}</h2>
-        <span>{author}</span>
+        <span>{book.genres}</span>
+        <h2>{book.title}</h2>
+        <span>{book.author}</span>
 
         <div className="comments-remove-edit">
           <span>Comments</span>
-          <button type="button" className="remove">
+          <button
+            onClick={() => dispatch(removeBookAction(book.id))}
+            type="button"
+            className="remove"
+          >
             Remove
           </button>
           <span>Edit</span>
@@ -24,7 +31,7 @@ function Book({ title, author, genre, progress }) {
 
       <div className="progress">
         <div className="progress-bar">
-          <CircularProgressbar value={progress} text={progress} />
+          <CircularProgressbar value={book.progress} text={book.progress} />
         </div>
         <div className="progress-details">
           <span>CURRENT CHAPTER</span>
@@ -38,8 +45,5 @@ function Book({ title, author, genre, progress }) {
 
 export default Book;
 Book.propTypes = {
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  progress: PropTypes.string.isRequired,
+  book: PropTypes.string.isRequired,
 };

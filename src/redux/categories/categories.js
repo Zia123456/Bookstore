@@ -9,3 +9,7 @@ export default function categoriesReducer(state = INITIALSTATE, action = {}) {
       return state;
   }
 }
+
+export function statusChecker() {
+  return { type: STATUS };
+}
