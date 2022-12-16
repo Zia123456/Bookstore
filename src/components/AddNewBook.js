@@ -2,31 +2,34 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { createBookAction } from '../redux/books/books';
+import { addBook, getBooks } from '../redux/books/bookSlice';
+// import { createBookAction } from '../redux/books/books';
 
 function AddBook() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setcategory] = useState('');
 
   const onChange = (e) => {
     if (e.target.name === 'title') {
       setTitle(e.target.value);
-    } else {
+    } else if (e.target.name === 'author') {
       setAuthor(e.target.value);
+    } else {
+      setcategory(e.target.value);
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim() || author.trim()) {
+    if (title.trim() || author.trim() || category.trim()) {
       dispatch(
-        createBookAction({
-          id: uuidv4(),
+        addBook({
+          item_id: uuidv4(),
           title,
           author,
-          genres: 'Sci-FiFantasy',
-          progress: 0,
+          category,
         }),
       );
     } else {
@@ -35,6 +38,8 @@ function AddBook() {
 
     setTitle('');
     setAuthor('');
+    setcategory('');
+    dispatch(getBooks);
   };
 
   return (
@@ -54,6 +59,14 @@ function AddBook() {
         type="text"
         className="author"
         placeholder="author"
+      />
+      <input
+        onChange={onChange}
+        value={category}
+        name="genres"
+        type="text"
+        className="genres"
+        placeholder="category"
       />
       <button type="submit"> ADD BOOK</button>
     </form>

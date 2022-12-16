@@ -3,23 +3,23 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { removeBookAction } from '../redux/books/books';
+// import { removeBookAction } from '../redux/books/books';
+import { removeBook } from '../redux/books/bookSlice';
 
-function Book(props) {
+function Book({ id, book }) {
   const dispatch = useDispatch();
-  const { book } = props;
 
   return (
     <div className="book">
       <div>
-        <span>{book.genres}</span>
+        <span>{book.category}</span>
         <h2>{book.title}</h2>
         <span>{book.author}</span>
 
         <div className="comments-remove-edit">
           <span>Comments</span>
           <button
-            onClick={() => dispatch(removeBookAction(book.id))}
+            onClick={() => dispatch(removeBook(id))}
             type="button"
             className="remove"
           >
@@ -43,7 +43,8 @@ function Book(props) {
   );
 }
 
-export default Book;
 Book.propTypes = {
   book: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
+export default Book;
