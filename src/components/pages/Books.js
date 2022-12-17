@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from '../Book';
@@ -13,7 +14,12 @@ const Books = () => {
   }, [dispatch]);
 
   if (booksList.length === 0) {
-    return 'loading...';
+    return (
+      <div className="loading-container">
+        <div className="circle"></div>
+        <h1 className="loading">Loading...</h1>
+      </div>
+    );
   }
 
   return (
