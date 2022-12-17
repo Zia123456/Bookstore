@@ -5,13 +5,13 @@ const Header = () => (
   <nav className="Navbar">
     <ul className="navigation-container">
       <li>
-        <Link className="linkStyle" to="/">
+        <Link className="linkStyle-1" to="/">
           Bookstore CMS
         </Link>
       </li>
       <li>
         <Link className="linkStyle" to="/">
-          Books
+          BOOKS
         </Link>
       </li>
       <li>
@@ -20,7 +20,7 @@ const Header = () => (
         </Link>
       </li>
     </ul>
-    <div className="profile">profile</div>
+    <div className="profile">p</div>
   </nav>
 );
 

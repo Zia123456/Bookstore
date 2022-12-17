@@ -7,8 +7,12 @@ const Categories = () => {
   const status = useSelector((state) => state.categoriesReducer);
   return (
     <div>
-      <h1>{status}</h1>
-      <button onClick={() => dispatch(statusChecker())} type="button">
+      <h1 className="status-text">{status}</h1>
+      <button
+        className="status-button"
+        onClick={() => dispatch(statusChecker())}
+        type="button"
+      >
         Check status
       </button>
     </div>

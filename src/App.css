@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(249, 247, 247);
 }
 
 code {
@@ -22,10 +23,12 @@ code {
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid rgb(172, 169, 169);
-  background-color: aqua;
+  background-color: #fff;
 }
 
 .navigation-container {
+  height: 40px;
+  margin-left: 3%;
   display: flex;
   flex-direction: row;
   gap: 30px;
@@ -34,12 +37,25 @@ code {
   list-style: none;
 }
 
+.linkStyle-1 {
+  text-decoration: none;
+  color: rgb(58, 116, 251);
+}
+
+.linkStyle {
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+}
+
 .profile {
   width: 50px;
   height: 50px;
   margin-right: 70px;
   border-radius: 50%;
-  background-color: tomato;
+  background-image: url(./images/profile-icon.png);
+  background-size: 70px 55px;
+  background-position: center;
 }
 
 .container {
@@ -63,47 +79,200 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: bisque;
+  align-items: center;
+  border: 1px solid rgb(153, 150, 150);
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.book-details-container {
+  height: 150px;
+  margin-left: 30px;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-size: 20px;
+  color: grey;
+}
+
+.title {
+  margin-top: 5px;
+}
+
+.author {
+  margin-top: -20px;
+  color: rgb(11, 167, 234);
 }
 
 .comments-remove-edit {
+  margin-top: 35px;
   display: flex;
   flex-direction: row;
   gap: 20px;
+  color: rgb(11, 167, 234);
 }
 
 .remove {
   border: none;
   outline: none;
   background: none;
+  color: rgb(11, 167, 234);
+}
+
+.vertical {
+  border-left: 2px solid rgb(212, 207, 207);
+  height: 25px;
+  color: white;
 }
 
 .progress {
-  width: 40%;
+  width: 30%;
+  height: 150px;
+  margin-right: 8%;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  gap: 39%;
 }
 
 .progress-bar {
-  width: 150px;
   height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
-.progress-details {
+.circular-progress {
+  width: 70px;
+  height: 70px;
+}
+
+.completed {
   display: flex;
   flex-direction: column;
 }
 
-.form-container {
+.percentage {
+  font-size: 35px;
+}
+
+.completed-text {
+  font-size: 18px;
+  color: grey;
+}
+
+.long-vertical {
+  border-left: 2px solid rgb(212, 207, 207);
+  height: 60px;
+}
+
+.progress-details {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.current-chapter {
+  font-size: 18px;
+  color: grey;
+}
+
+.introduction {
+  font-size: 18px;
+  color: rgb(12, 12, 12);
+}
+
+.update-progress {
+  width: 200px;
+  height: 35px;
+  margin-top: 40px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #fff;
+  background-color: rgb(11, 167, 234);
+}
+
+.add-book {
   width: 90%;
+  margin-top: 40px;
+  color: grey;
+}
+
+.hr-line {
+  color: rgb(190, 188, 188);
+}
+
+.form-container {
+  width: 100%;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }
 
-.linkStyle {
-  text-decoration: none;
-  color: black;
+input {
+  width: 25%;
+  height: 40px;
+  padding-left: 12px;
+  border-radius: 4px;
+}
+
+.add-book-button {
+  width: 10%;
+  height: 48px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #fff;
+  background-color: rgb(11, 167, 234);
+}
+
+.status-button {
+  width: 10%;
+  height: 48px;
+  margin-left: 30px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #fff;
+  background-color: rgb(11, 167, 234);
+}
+
+.status-text {
+  margin-left: 30px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  margin: 70px auto;
+  width: 100px;
+  height: 100px;
+  border: 10px solid rgba(7, 148, 235, 0.2);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  margin-top: -30px;
 }

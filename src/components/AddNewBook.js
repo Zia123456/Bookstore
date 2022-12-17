@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook, getBooks } from '../redux/books/bookSlice';
-// import { createBookAction } from '../redux/books/books';
 
 function AddBook() {
   const dispatch = useDispatch();
@@ -43,33 +42,39 @@ function AddBook() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
-      <input
-        onChange={onChange}
-        type="text"
-        className="title"
-        value={title}
-        name="title"
-        placeholder="title"
-      />
-      <input
-        onChange={onChange}
-        value={author}
-        name="author"
-        type="text"
-        className="author"
-        placeholder="author"
-      />
-      <input
-        onChange={onChange}
-        value={category}
-        name="genres"
-        type="text"
-        className="genres"
-        placeholder="category"
-      />
-      <button type="submit"> ADD BOOK</button>
-    </form>
+    <div className="add-book">
+      <hr className="hr-line" />
+      <h1>ADD NEW BOOK</h1>
+      <form onSubmit={handleSubmit} className="form-container">
+        <input
+          onChange={onChange}
+          type="text"
+          className="title-input"
+          value={title}
+          name="title"
+          placeholder="title"
+        />
+        <input
+          onChange={onChange}
+          value={author}
+          name="author"
+          type="text"
+          className="author-input"
+          placeholder="author"
+        />
+        <input
+          onChange={onChange}
+          value={category}
+          name="genres"
+          type="text"
+          className="genres"
+          placeholder="category"
+        />
+        <button type="submit" className="add-book-button">
+          ADD BOOK
+        </button>
+      </form>
+    </div>
   );
 }
 
